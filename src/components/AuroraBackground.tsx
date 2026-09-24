@@ -19,7 +19,7 @@ export function AuroraBackground() {
       frame = 0;
       const y = window.scrollY;
       for (const layer of layers) {
-        const speed = Number(layer.dataset.speed ?? 0);
+        const speed = Number(layer.dataset["speed"] ?? 0);
         layer.style.setProperty("--parallax", `${(y * speed).toFixed(1)}px`);
       }
     };
