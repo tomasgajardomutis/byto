@@ -1,23 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://byto.cl/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://byto.cl/servicios</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://byto.cl/proyectos</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://byto.cl/contacto</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <url><loc>https://byto.cl/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://byto.cl/servicios</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://byto.cl/servicios/desarrollo-web</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://byto.cl/servicios/tiendas-online</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://byto.cl/servicios/aplicaciones-web</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://byto.cl/servicios/seo</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://byto.cl/servicios/google-business</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://byto.cl/proyectos</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://byto.cl/contacto</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
