@@ -1,46 +1,38 @@
 import { useQuery } from "@tanstack/react-query";
-import { Code2, ShoppingCart, Search, Layers, MapPin, Sparkles } from "lucide-react";
+import { Code2, ShoppingCart, Search, Layers, MapPin, Sparkles, ArrowRight } from "lucide-react";
 import { servicesQuery } from "@/lib/content";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 
-const icons: Record<string, typeof Code2> = {
-  code: Code2,
-  cart: ShoppingCart,
-  search: Search,
-  layers: Layers,
-  mappin: MapPin,
-  sparkles: Sparkles,
+const icons: Record<string, typeof Code2> = { code: Code2, cart: ShoppingCart, search: Search, layers: Layers, mappin: MapPin, sparkles: Sparkles };
+const serviceRoutes: Record<string, string> = {
+  "Desarrollo Web": "/servicios/desarrollo-web",
+  "E-commerce": "/servicios/tiendas-online",
+  "Tiendas Online": "/servicios/tiendas-online",
+  "Aplicaciones Web": "/servicios/aplicaciones-web",
+  "SEO": "/servicios/seo",
+  "Posicionamiento Web SEO": "/servicios/seo",
+  "Google Business": "/servicios/google-business",
+  "Google Business Profile": "/servicios/google-business",
+  "Optimización de Ficha de Google Business": "/servicios/google-business",
 };
 
 export function ServicesSection() {
   const { data: services = [] } = useQuery(servicesQuery);
-
   return (
     <section id="servicios" className="px-5 py-20 md:py-28">
       <div className="mx-auto max-w-6xl">
-        <SectionHeading
-          eyebrow="Servicios"
-          title="Todo lo que tu negocio necesita en la web"
-          subtitle="Desde la primera línea de código hasta el primer lugar en Google."
-        />
-
+        <SectionHeading eyebrow="Servicios" title="Todo lo que tu negocio necesita en la web" subtitle="Desde la primera línea de código hasta el primer lugar en Google." />
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => {
             const Icon = icons[service.icon] ?? Sparkles;
+            const href = serviceRoutes[service.title];
             return (
-              <Reveal
-                key={service.id}
-                delay={i * 60}
-                className="aurora-border glass-panel group rounded-3xl p-6"
-              >
-                <div className="grid h-12 w-12 place-items-center rounded-2xl bg-[image:var(--gradient-aurora)] text-background">
-                  <Icon className="h-6 w-6" />
-                </div>
+              <Reveal key={service.id} delay={i * 60} className="aurora-border glass-panel group rounded-3xl p-6">
+                <div className="grid h-12 w-12 place-items-center rounded-2xl bg-[image:var(--gradient-aurora)] text-background"><Icon className="h-6 w-6" /></div>
                 <h3 className="mt-5 font-display text-xl font-semibold">{service.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {service.description}
-                </p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{service.description}</p>
+                {href && <a href={href} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-all hover:gap-3">Conocer servicio <ArrowRight className="h-4 w-4" /></a>}
               </Reveal>
             );
           })}
