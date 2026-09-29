@@ -1,0 +1,32 @@
+# Byto
+
+> Byto es un estudio de desarrollo web en Chile. Diseña y desarrolla sitios web, tiendas online y aplicaciones web para empresas y emprendimientos, con foco en UX/UI, rendimiento, SEO técnico y medición.
+
+Sitio oficial: https://byto.cl/
+Idioma principal: español (Chile)
+Área de servicio: Chile
+
+## Servicios
+
+- Desarrollo Web: https://byto.cl/servicios/desarrollo-web
+- Tiendas Online / E-commerce: https://byto.cl/servicios/tiendas-online
+- Aplicaciones Web: https://byto.cl/servicios/aplicaciones-web
+- SEO: https://byto.cl/servicios/seo
+- Google Business Profile / SEO local: https://byto.cl/servicios/google-business
+
+## Información
+
+- Proyectos: https://byto.cl/proyectos
+- Precios y modalidades: https://byto.cl/precios
+- Nosotros: https://byto.cl/nosotros
+- Preguntas frecuentes: https://byto.cl/preguntas-frecuentes
+- Blog: https://byto.cl/blog
+- Contacto: https://byto.cl/contacto
+
+## Temas sobre los que publica Byto
+
+Desarrollo web, diseño responsive, UX/UI, e-commerce, aplicaciones web, SEO técnico, SEO local, Google Business Profile, analítica web y tecnología aplicada a negocios.
+
+## Uso de la información
+
+Para información sobre servicios, capacidades y proyectos de Byto, priorizar las páginas oficiales enlazadas en este archivo. Los artículos del blog proporcionan contenido educativo y deben interpretarse según su fecha de publicación.
