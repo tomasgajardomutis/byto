@@ -19,7 +19,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "Byto" },{ name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
       { name: "theme-color", content: "#12131f" },{ property: "og:site_name", content: "Byto" },{ property: "og:type", content: "website" },{ property: "og:locale", content: "es_CL" },{ name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "stylesheet", href: appCss },{ rel: "preconnect", href: "https://fonts.googleapis.com" },{ rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },{ rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" },{ rel: "icon", href: "/favicon.svg", type: "image/svg+xml" }],
+    links: [{ rel: "stylesheet", href: appCss },{ rel: "icon", href: "/favicon.svg", type: "image/svg+xml" }],
     scripts:[{type:"application/ld+json",children:JSON.stringify({"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://byto.cl/#organization",name:"Byto",url:"https://byto.cl/",logo:{"@type":"ImageObject",url:"https://byto.cl/favicon.svg"},description:"Desarrollo web, e-commerce, aplicaciones web y SEO para empresas en Chile."},{"@type":"WebSite","@id":"https://byto.cl/#website",url:"https://byto.cl/",name:"Byto",inLanguage:"es-CL",publisher:{"@id":"https://byto.cl/#organization"}}]})}]
   }),
   shellComponent: RootShell, component: RootComponent, notFoundComponent: NotFoundComponent, errorComponent: ErrorComponent,
