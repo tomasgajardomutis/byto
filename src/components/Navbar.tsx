@@ -28,10 +28,10 @@ export function Navbar() {
   }, [open]);
 
   return (
-    <header className={cn("fixed inset-x-0 top-0 z-50 transition-all duration-300", scrolled ? "glass-panel border-x-0 border-t-0" : "border-b border-transparent")}>
+    <header className={cn("fixed inset-x-0 top-0 z-50 h-16 transition-[background-color,border-color,box-shadow] duration-300", scrolled ? "glass-panel border-x-0 border-t-0" : "border-b border-transparent")}>
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
-        <a href="/" aria-label="Byto - Inicio" className="flex items-center">
-          <img src="/byto-logo.svg" alt="Byto" className="h-12 w-auto object-contain" />
+        <a href="/" aria-label="Byto - Inicio" className="flex h-14 w-[123px] shrink-0 items-center">
+          <img src="/byto-logo.svg" alt="Byto" width="363" height="166" fetchPriority="high" decoding="async" className="block h-12 w-[105px] object-contain" />
         </a>
         <ul className="hidden items-center gap-7 md:flex">
           {links.map((l) => <li key={l.href}><a href={l.href} className="text-sm text-muted-foreground transition-colors hover:text-primary">{l.label}</a></li>)}
