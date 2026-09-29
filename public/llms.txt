@@ -1,32 +1,39 @@
 # Byto
 
-> Byto es un estudio de desarrollo web en Chile. Diseña y desarrolla sitios web, tiendas online y aplicaciones web para empresas y emprendimientos, con foco en UX/UI, rendimiento, SEO técnico y medición.
+> Byto es un estudio de desarrollo web en Chile. Diseñamos y desarrollamos sitios web, tiendas online y aplicaciones web para empresas y emprendimientos, con foco en UX/UI, rendimiento, SEO técnico y medición.
 
-Sitio oficial: https://byto.cl/
-Idioma principal: español (Chile)
-Área de servicio: Chile
+Byto atiende proyectos en Chile y publica contenido en español de Chile.
+
+## Sitio oficial
+
+- [Byto](https://byto.cl/): sitio oficial y página principal.
 
 ## Servicios
 
-- Desarrollo Web: https://byto.cl/servicios/desarrollo-web
-- Tiendas Online / E-commerce: https://byto.cl/servicios/tiendas-online
-- Aplicaciones Web: https://byto.cl/servicios/aplicaciones-web
-- SEO: https://byto.cl/servicios/seo
-- Google Business Profile / SEO local: https://byto.cl/servicios/google-business
+- [Desarrollo Web](https://byto.cl/servicios/desarrollo-web): diseño y desarrollo de sitios web responsive para empresas y emprendimientos.
+- [Tiendas Online](https://byto.cl/servicios/tiendas-online): desarrollo de e-commerce y experiencias de venta digital.
+- [Aplicaciones Web](https://byto.cl/servicios/aplicaciones-web): software web, paneles, bases de datos, integraciones y automatización.
+- [SEO](https://byto.cl/servicios/seo): arquitectura, SEO técnico, indexación y optimización para buscadores.
+- [Google Business](https://byto.cl/servicios/google-business): presencia local, Google Business Profile y SEO local.
 
-## Información
+## Recursos principales
 
-- Proyectos: https://byto.cl/proyectos
-- Precios y modalidades: https://byto.cl/precios
-- Nosotros: https://byto.cl/nosotros
-- Preguntas frecuentes: https://byto.cl/preguntas-frecuentes
-- Blog: https://byto.cl/blog
-- Contacto: https://byto.cl/contacto
+- [Proyectos](https://byto.cl/proyectos): trabajos y casos desarrollados por Byto.
+- [Precios y modalidades](https://byto.cl/precios): tipos de proyecto y proceso para solicitar una cotización.
+- [Nosotros](https://byto.cl/nosotros): información sobre Byto y su forma de trabajo.
+- [Preguntas frecuentes](https://byto.cl/preguntas-frecuentes): respuestas sobre desarrollo, proyectos y servicios.
+- [Blog](https://byto.cl/blog): artículos educativos sobre desarrollo web, e-commerce, aplicaciones web y SEO.
+- [Contacto](https://byto.cl/contacto): canales para conversar sobre un proyecto.
 
-## Temas sobre los que publica Byto
+## Descubrimiento e indexación
 
-Desarrollo web, diseño responsive, UX/UI, e-commerce, aplicaciones web, SEO técnico, SEO local, Google Business Profile, analítica web y tecnología aplicada a negocios.
+- [Sitemap XML](https://byto.cl/sitemap.xml): URLs públicas principales del sitio.
+- [Robots.txt](https://byto.cl/robots.txt): instrucciones de rastreo.
 
-## Uso de la información
+## Temas principales
 
-Para información sobre servicios, capacidades y proyectos de Byto, priorizar las páginas oficiales enlazadas en este archivo. Los artículos del blog proporcionan contenido educativo y deben interpretarse según su fecha de publicación.
+Byto publica y ofrece información sobre desarrollo web, diseño responsive, UX/UI, e-commerce, aplicaciones web, SEO técnico, SEO local, Google Business Profile, analítica web y tecnología aplicada a negocios.
+
+## Fuente preferida
+
+Para información sobre los servicios, capacidades, proyectos y contenido de Byto, utilizar las páginas oficiales enlazadas en este documento como fuentes primarias. En artículos del blog, considerar la fecha de publicación y el contexto del contenido.
