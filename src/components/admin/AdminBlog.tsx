@@ -4,6 +4,7 @@ import { Plus, Save, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { AdminCard, Field, GhostButton, PrimaryButton, adminInput } from "./fields";
+import { RichTextEditor } from "./RichTextEditor";
 
 type Post = { id:string; title:string; slug:string; excerpt:string; content:string; image_url:string|null; category:string; tags:string; meta_title:string; meta_description:string; is_published:boolean; published_at:string|null; sort_order:number };
 const db = supabase as any;
@@ -24,7 +25,7 @@ function PostEditor({post,refresh}:{post:Post;refresh:()=>void}){
  <Field label="Categoría"><input className={adminInput} value={d.category} onChange={e=>set("category",e.target.value)}/></Field><Field label="Etiquetas (separadas por coma)"><input className={adminInput} value={d.tags} onChange={e=>set("tags",e.target.value)}/></Field>
  <div className="sm:col-span-2"><Field label="Imagen (URL)"><input className={adminInput} value={d.image_url??""} onChange={e=>set("image_url",e.target.value)}/></Field></div>
  <div className="sm:col-span-2"><Field label="Extracto"><textarea rows={3} className={adminInput} value={d.excerpt} onChange={e=>set("excerpt",e.target.value)}/></Field></div>
- <div className="sm:col-span-2"><Field label="Contenido"><textarea rows={14} className={adminInput} value={d.content} onChange={e=>set("content",e.target.value)} placeholder="Escribe el contenido del artículo. Separa párrafos con una línea en blanco."/></Field></div>
+ <div className="sm:col-span-2"><Field label="Contenido"><RichTextEditor value={d.content} onChange={value=>set("content",value)}/></Field></div>
  <Field label="SEO title"><input className={adminInput} value={d.meta_title} onChange={e=>set("meta_title",e.target.value)}/></Field><Field label="SEO description"><input className={adminInput} value={d.meta_description} onChange={e=>set("meta_description",e.target.value)}/></Field>
  <Field label="Orden"><input type="number" className={adminInput} value={d.sort_order} onChange={e=>set("sort_order",Number(e.target.value))}/></Field><label className="flex items-center gap-3 py-6"><input type="checkbox" checked={d.is_published} onChange={e=>set("is_published",e.target.checked)} className="h-5 w-5 accent-[oklch(0.82_0.15_196)]"/><span className="text-sm">Publicar en el sitio</span></label>
  </div><div className="mt-4 flex gap-2"><PrimaryButton onClick={save} disabled={busy}><Save className="h-4 w-4"/>Guardar</PrimaryButton><GhostButton onClick={remove}><Trash2 className="h-4 w-4"/>Eliminar</GhostButton></div></AdminCard>;
