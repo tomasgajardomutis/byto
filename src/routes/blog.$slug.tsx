@@ -7,6 +7,20 @@ const db=supabase as any;
 const SITE_URL="https://byto.cl";
 type Post={title:string;slug:string;excerpt:string;content:string;image_url:string|null;category:string;tags:string;meta_title:string;meta_description:string;published_at:string|null};
 
+const serviceResources=[
+ {title:"Desarrollo Web",href:"/servicios/desarrollo-web",keywords:["web","sitio","página","pagina","diseño","desarrollo"]},
+ {title:"Tiendas Online",href:"/servicios/tiendas-online",keywords:["e-commerce","ecommerce","tienda","ventas","producto","checkout"]},
+ {title:"Aplicaciones Web",href:"/servicios/aplicaciones-web",keywords:["aplicación","aplicacion","software","automatización","automatizacion","sistema","app"]},
+ {title:"SEO",href:"/servicios/seo",keywords:["seo","google","posicionamiento","tráfico","trafico","orgánico","organico"]},
+ {title:"Google Business",href:"/servicios/google-business",keywords:["google business","maps","local","reseñas","resenas","perfil de empresa"]},
+];
+
+function relatedServices(post:Post){
+ const haystack=`${post.title} ${post.category} ${post.tags} ${post.excerpt}`.toLocaleLowerCase("es-CL");
+ const matched=serviceResources.filter(service=>service.keywords.some(keyword=>haystack.includes(keyword)));
+ return (matched.length?matched:serviceResources.slice(0,3)).slice(0,3);
+}
+
 async function getPost(slug:string):Promise<Post|null>{
  const{data,error}=await db.from("blog_posts").select("*").eq("slug",slug).eq("is_published",true).maybeSingle();
  if(error)throw error;
@@ -29,4 +43,4 @@ export const Route=createFileRoute("/blog/$slug")({
  component:Page
 });
 
-function Page(){const{slug}=Route.useParams();const{data:post,isLoading}=useQuery<Post|null>({queryKey:["blog-post",slug],queryFn:()=>getPost(slug)});if(isLoading)return <ContentPage eyebrow="Blog" title="Cargando…" intro=""> </ContentPage>;if(!post)return <ContentPage eyebrow="Blog" title="Publicación no encontrada" intro="El artículo que buscas no está disponible."><Link to="/blog" className="font-semibold text-primary">Volver al blog</Link></ContentPage>;const isRich=/<\/?[a-z][\s\S]*>/i.test(post.content);return <ContentPage eyebrow={post.category||"Blog"} title={post.title} intro={post.excerpt}><article className="mx-auto max-w-3xl">{post.image_url&&<img src={post.image_url} alt={post.title} className="mb-10 aspect-[16/9] w-full rounded-3xl object-cover"/>}{isRich?<div className="blog-content text-base leading-8 text-muted-foreground" dangerouslySetInnerHTML={{__html:post.content}}/>:<div className="space-y-6 text-base leading-8 text-muted-foreground">{post.content.split(/\n\s*\n/).filter(Boolean).map((p,i)=><p key={i}>{p}</p>)}</div>}{post.tags&&<div className="mt-12 flex flex-wrap gap-2">{post.tags.split(",").map(tag=><span key={tag} className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground">{tag.trim()}</span>)}</div>}</article></ContentPage>}
+function Page(){const{slug}=Route.useParams();const{data:post,isLoading}=useQuery<Post|null>({queryKey:["blog-post",slug],queryFn:()=>getPost(slug)});if(isLoading)return <ContentPage eyebrow="Blog" title="Cargando…" intro=""> </ContentPage>;if(!post)return <ContentPage eyebrow="Blog" title="Publicación no encontrada" intro="El artículo que buscas no está disponible."><Link to="/blog" className="font-semibold text-primary">Volver al blog</Link></ContentPage>;const isRich=/<\/?[a-z][\s\S]*>/i.test(post.content);const related=relatedServices(post);return <ContentPage eyebrow={post.category||"Blog"} title={post.title} intro={post.excerpt}><article className="mx-auto max-w-3xl">{post.image_url&&<img src={post.image_url} alt={post.title} className="mb-10 aspect-[16/9] w-full rounded-3xl object-cover"/>}{isRich?<div className="blog-content text-base leading-8 text-muted-foreground" dangerouslySetInnerHTML={{__html:post.content}}/>:<div className="space-y-6 text-base leading-8 text-muted-foreground">{post.content.split(/\n\s*\n/).filter(Boolean).map((p,i)=><p key={i}>{p}</p>)}</div>}{post.tags&&<div className="mt-12 flex flex-wrap gap-2">{post.tags.split(",").map(tag=><span key={tag} className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground">{tag.trim()}</span>)}</div>}<aside className="mt-12 rounded-3xl border border-border bg-surface/50 p-6"><h2 className="font-display text-xl font-bold text-foreground">Servicios relacionados</h2><p className="mt-2 text-sm text-muted-foreground">Si quieres aplicar estas ideas en tu negocio, revisa estas soluciones de Byto.</p><div className="mt-5 flex flex-wrap gap-3">{related.map(item=><a key={item.href} href={item.href} className="rounded-full border border-border px-4 py-2 text-sm font-semibold text-primary transition-colors hover:border-primary/60">{item.title}</a>)}</div></aside><p className="mt-8 text-sm"><Link to="/blog" className="font-semibold text-primary">← Ver más artículos</Link></p></article></ContentPage>}
