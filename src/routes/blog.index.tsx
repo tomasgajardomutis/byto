@@ -14,7 +14,7 @@ type Post = { id:string; slug:string; title:string; excerpt:string; image_url:st
 export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [{ title }, { name: "description", content: description }],
-    links: [{ rel: "canonical", href: "/blog" }],
+    links: [{ rel: "canonical", href: "https://byto.cl/blog" }],
   }),
   component: BlogIndex,
 });
@@ -42,5 +42,16 @@ function BlogIndex() {
             <div className="p-6"><p className="text-xs font-semibold uppercase tracking-wider text-primary">{post.category || "Byto"}</p><h2 className="mt-3 font-display text-2xl font-bold">{post.title}</h2><p className="mt-3 text-sm leading-relaxed text-muted-foreground">{post.excerpt}</p><span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:gap-3">Leer artículo <ArrowRight className="h-4 w-4" /></span></div>
           </Link>
         </Reveal>)}</div>}
+    <Reveal className="mt-12 rounded-3xl border border-border bg-surface/50 p-7">
+      <h2 className="font-display text-2xl font-bold">Lleva estas ideas a tu proyecto</h2>
+      <p className="mt-3 max-w-3xl text-muted-foreground">Explora los servicios de Byto relacionados con los temas que tratamos en el blog.</p>
+      <div className="mt-6 flex flex-wrap gap-3">
+        <Link to="/servicios/desarrollo-web" className="rounded-full border border-border px-4 py-2 text-sm font-semibold text-primary">Desarrollo Web</Link>
+        <Link to="/servicios/tiendas-online" className="rounded-full border border-border px-4 py-2 text-sm font-semibold text-primary">Tiendas Online</Link>
+        <Link to="/servicios/aplicaciones-web" className="rounded-full border border-border px-4 py-2 text-sm font-semibold text-primary">Aplicaciones Web</Link>
+        <Link to="/servicios/seo" className="rounded-full border border-border px-4 py-2 text-sm font-semibold text-primary">SEO</Link>
+        <Link to="/servicios/google-business" className="rounded-full border border-border px-4 py-2 text-sm font-semibold text-primary">Google Business</Link>
+      </div>
+    </Reveal>
   </ContentPage>;
 }
