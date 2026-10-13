@@ -21,9 +21,9 @@ export const Route = createFileRoute("/proyectos")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/proyectos" },
+      { property: "og:url", content: "https://byto.cl/proyectos" },
     ],
-    links: [{ rel: "canonical", href: "/proyectos" }],
+    links: [{ rel: "canonical", href: "https://byto.cl/proyectos" }],
   }),
   component: ProyectosPage,
 });
