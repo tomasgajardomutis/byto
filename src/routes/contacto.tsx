@@ -17,9 +17,9 @@ export const Route = createFileRoute("/contacto")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/contacto" },
+      { property: "og:url", content: "https://byto.cl/contacto" },
     ],
-    links: [{ rel: "canonical", href: "/contacto" }],
+    links: [{ rel: "canonical", href: "https://byto.cl/contacto" }],
   }),
   component: ContactoPage,
 });
