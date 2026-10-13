@@ -13,7 +13,7 @@ type Post = { id:string; slug:string; title:string; excerpt:string; image_url:st
 
 export const Route = createFileRoute("/blog/")({
   head: () => ({
-    meta: [{ title }, { name: "description", content: description }],
+    meta: [{ title }, { name: "description", content: description }, { name: "robots", content: "index, follow, max-image-preview:large" }],
     links: [{ rel: "canonical", href: "https://byto.cl/blog" }],
   }),
   component: BlogIndex,
