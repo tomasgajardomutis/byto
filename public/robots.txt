@@ -1,8 +1,11 @@
+User-agent: Googlebot
+Allow: /
+Disallow: /admin
+
 User-agent: *
 Allow: /
 Disallow: /admin
 
-# AI / GEO crawlers
 User-agent: GPTBot
 Allow: /
 
