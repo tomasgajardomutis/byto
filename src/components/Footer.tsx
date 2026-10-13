@@ -9,8 +9,13 @@ export function Footer() {
       <div><p className="font-display font-semibold">Información</p><div className="mt-3 grid gap-2 text-sm text-muted-foreground"><Link to="/contacto" className="hover:text-primary">Contacto</Link><Link to="/privacidad" className="hover:text-primary">Privacidad</Link><Link to="/terminos" className="hover:text-primary">Términos</Link></div></div>
     </div>
     {/*
-    <div className="mt-10 flex flex-col gap-3 border-t border-border pt-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between"><span>© {new Date().getFullYear()} Byto</span><Link to="/admin" className="transition-colors hover:text-primary">Admin</Link></div>
-  </div>
+    <div className="mt-10 flex flex-col gap-3 border-t border-border pt-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+      <span>© {new Date().getFullYear()} Byto
+      </span>
+      <Link to="/admin" className="transition-colors hover:text-primary">Admin</Link>
+    </div>
   */}
+  </div>
+  
   </footer>;
 }
