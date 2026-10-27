@@ -14,8 +14,8 @@ const Footer = lazy(() => import("@/components/Footer").then((m) => ({ default: 
 const WhatsAppFab = lazy(() => import("@/components/WhatsAppFab").then((m) => ({ default: m.WhatsAppFab })));
 const CursorHalo = lazy(() => import("@/components/CursorHalo").then((m) => ({ default: m.CursorHalo })));
 
-const title="Byto | Desarrollo web, e-commerce y SEO en Chile";
-const description="Diseñamos y desarrollamos sitios web, tiendas online y aplicaciones web para empresas en Chile, con UX/UI, SEO técnico, rendimiento y medición.";
+const title="Desarrollo Web y Páginas Web en Chile | Byto";
+const description="Desarrollo web en Chile para empresas, pymes y emprendimientos. Creamos páginas web profesionales, tiendas online y aplicaciones web con diseño UX/UI, SEO técnico y alto rendimiento.";
 
 const crawlLinks = [
   ["Desarrollo Web", "/servicios/desarrollo-web"],
@@ -55,6 +55,16 @@ function Landing(){
   return <>
     <Suspense fallback={null}><AuroraBackground/></Suspense>
     <Navbar/>
-    <main><Hero/><section aria-label="Explora Byto" className="px-5 pb-10"><div className="mx-auto flex max-w-6xl flex-wrap justify-center gap-x-5 gap-y-2 text-sm text-muted-foreground">{crawlLinks.map(([label,href])=><a key={href} href={href} className="hover:text-primary">{label}</a>)}</div></section><DeferredHomeContent/></main>
+    <main><Hero/>
+      <section className="px-5 pb-14">
+        <div className="mx-auto max-w-5xl rounded-3xl border border-border bg-surface/40 p-7 md:p-10">
+          <h2 className="font-display text-2xl font-bold md:text-3xl">Desarrollo web para empresas que necesitan generar resultados</h2>
+          <p className="mt-4 leading-8 text-muted-foreground">Byto es un estudio de desarrollo web en Santiago que crea páginas web profesionales para empresas, pymes y emprendimientos en Chile. Diseñamos sitios corporativos, tiendas online y aplicaciones web con una estructura clara, experiencia móvil, SEO técnico y medición desde el inicio.</p>
+          <p className="mt-4 leading-8 text-muted-foreground">Si necesitas una nueva página web, renovar un sitio antiguo o mejorar tu presencia en Google, trabajamos desde la arquitectura de contenidos y el diseño UX/UI hasta el desarrollo, publicación e indexación. El objetivo es construir una web útil para tus clientes y preparada para crecer.</p>
+          <div className="mt-6 flex flex-wrap gap-x-5 gap-y-3 text-sm">{crawlLinks.map(([label,href])=><a key={href} href={href} className="font-semibold text-primary hover:underline">{label}</a>)}</div>
+        </div>
+      </section>
+      <DeferredHomeContent/>
+    </main>
   </>;
 }
